@@ -112,17 +112,9 @@ module.exports = function override(config, env) {
   config.optimization.runtimeChunk = false
   config.optimization.splitChunks = false
 
-
-
   const publicPath = isEnvProduction
       ? paths.servedPath
       : isEnvDevelopment && '/';
-
-  // console.log('************************************')
-  // console.log('************************************')
-  // console.log(publicPath)
-  // console.log('************************************')
-  // console.log('************************************')
 
   const multiEntryManfiestPlugin = new ManifestPlugin({
     fileName: 'asset-manifest.json',
