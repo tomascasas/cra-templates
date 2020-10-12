@@ -5,3 +5,4 @@ The main goal is to inject webpack config changes enough to have multiple entry 
 Refs:
 https://reactjs.org/docs/create-a-new-react-app.html
 https://github.com/vl4d1m1r4/cra-multi-entry
+https://github.com/Derek-Hu/react-app-rewire-multiple-entry
