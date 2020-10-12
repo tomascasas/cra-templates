@@ -32,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "react-app-rewire-multiple-entry": "2.2.0",
     "react-app-rewired": "2.1.6"
   }
 }
