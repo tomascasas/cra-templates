@@ -108,20 +108,20 @@ module.exports = function override(config, env) {
   const multiEntryManfiestPlugin = new ManifestPlugin({
     fileName: 'asset-manifest.json',
     publicPath: publicPath,
-    generate: (seed, files, entrypoints) => {
+    generate: (seed, files, entryPoints) => {
       const manifestFiles = files.reduce((manifest, file) => {
         manifest[file.name] = file.path;
         return manifest;
       }, seed);
 
-      const entrypointFiles = {};
-      Object.keys(entrypoints).forEach(entrypoint => {
-        entrypointFiles[entrypoint] = entrypoints[entrypoint].filter(fileName => !fileName.endsWith('.map'));
+      const entryPointFiles = {};
+      Object.keys(entryPoints).forEach(entryPoint => {
+        entryPointFiles[entryPoint] = entryPoints[entryPoint].filter(fileName => !fileName.endsWith('.map'));
       });
 
       return {
         files: manifestFiles,
-        entrypoints: entrypointFiles,
+        entryPoints: entryPointFiles,
       };
     },
   });
@@ -131,7 +131,6 @@ module.exports = function override(config, env) {
   // const limitChunkCountPlugin = new webpack.optimize.LimitChunkCountPlugin({
   //   maxChunks: 1
   // })
-  //
   // config.plugins = replacePlugin(config.plugins, (name) => /LimitChunkCountPlugin/i.test(name), limitChunkCountPlugin);
 
   return config;
