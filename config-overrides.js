@@ -96,10 +96,6 @@ module.exports = function override(config, env) {
     )
   );
 
-  config.output = {
-    path: path.join(__dirname, 'static', 'js'),
-    filename: '[name].js'
-  };
   // "output": {
   //   "pathinfo": true,
   //   "filename": "static/js/bundle.js",
@@ -109,6 +105,8 @@ module.exports = function override(config, env) {
   //   "jsonpFunction": "webpackJsonpcra-templates",
   //   "globalObject": "this"
   // };
+  if(isEnvDevelopment) config.output.filename = 'static/js/[name].bundle.js'
+
   config.optimization.runtimeChunk = false
   config.optimization.splitChunks = false
 
