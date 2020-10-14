@@ -96,15 +96,6 @@ module.exports = function override(config, env) {
     )
   );
 
-  // "output": {
-  //   "pathinfo": true,
-  //   "filename": "static/js/bundle.js",
-  //   "futureEmitAssets": true,
-  //   "chunkFilename": "static/js/[name].chunk.js",
-  //   "publicPath": "/",
-  //   "jsonpFunction": "webpackJsonpcra-templates",
-  //   "globalObject": "this"
-  // };
   if(isEnvDevelopment) config.output.filename = 'static/js/[name].bundle.js'
 
   config.optimization.runtimeChunk = false
